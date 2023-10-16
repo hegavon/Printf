@@ -8,7 +8,7 @@
  */
 int print_char(char c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -21,7 +21,7 @@ int print_str(char *str)
 {
 	if (str == NULL)
 		str = "(null)";
-	return write(1, str, _strlen(str));
+	return (write(1, str, _strlen(str)));
 }
 
 /**
@@ -33,9 +33,10 @@ int print_str(char *str)
 int _strlen(char *str)
 {
 	int len = 0;
+
 	while (str[len] != '\0')
 		len++;
-	return len;
+	return (len);
 }
 
 /**
@@ -48,8 +49,8 @@ int _printf(const char *format, ...)
 {
 	int printed_chars = 0;
 	va_list args;
-	va_start(args, format);
 
+	va_start(args, format);
 	while (*format)
 	{
 		if (*format != '%')
@@ -65,12 +66,14 @@ int _printf(const char *format, ...)
 				case 'c':
 					{
 						char c = va_arg(args, int);
+
 						printed_chars += print_char(c);
 						break;
 					}
 				case 's':
 					{
 						char *str = va_arg(args, char *);
+
 						printed_chars += print_str(str);
 						break;
 					}
@@ -86,8 +89,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(args);
-
-	return printed_chars;
+	return (printed_chars);
 }
