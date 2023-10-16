@@ -1,7 +1,7 @@
 C - Printf_ Milestone Project
 TASKS QUESTIONS:
 
-/**********Authorized functions and macros*************/
+********************/Authorized functions and macros*******************/
 
 write (man 2 write)
 
