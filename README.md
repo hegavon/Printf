@@ -22,7 +22,6 @@ You don’t have to handle the length modifiers
 1. Handle the following conversion specifiers:
 
 d
-
 i
 
 You don’t have to handle the flag characters
