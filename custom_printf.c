@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_char - Usedto print a character.
+ * print_char - Used to print a character.
  * @c: The character to be printed.
  *
  * Return: Returns the number of characters printed.
@@ -84,7 +84,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
-/* Add a new line using '\n' */
+	/* Add a new line using '\n' */
 	write(1, "\n", 1);
 	return (chars_printed);
 }
