@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_char - Used to print a character.
+ * print_char - Usedto print a character.
  * @c: The character to be printed.
  *
  * Return: Returns the number of characters printed.
