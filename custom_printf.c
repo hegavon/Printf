@@ -84,5 +84,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
+/* Add a new line using '\n' */
+	write(1, "\n", 1);
 	return (chars_printed);
 }
