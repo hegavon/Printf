@@ -1,56 +1,32 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <unistd.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <limits.h>
 
-#define BUFFER_SIZE 1024
-
-/****************** FUNCTIONS ******************/
-
 /**
- * output_char - Print a character.
- * @c: The character to print.
- *
- * Return: The number of characters printed.
+ * struct custom - A structure to hold custom data and function pointer.
+ * @data: A character array to store data.
+ * @a: A function pointer to an integer-returning function with no parameters.
  */
-int output_char(char c);
+typedef struct custom
+{
+	char data[50];
+	int (*a)();
+} find;
 
-/**
- * output_str - Print a string.
- * @str: The string to print.
- *
- * Return: The number of characters printed.
- */
-int output_str(char *str);
-
-/**
- * string_length - Calculate the length of a string.
- * @str: The string to measure.
- *
- * Return: The length of the string.
- */
-int string_length(const char *str);
-
-/**
- * _printf - A custom printf function that handles %c, %s, %% specifiers.
- * @format: The format string.
- *
- * Return: The number of characters printed.
- */
+/* Function Prototypes */
 int _printf(const char *format, ...);
-
-/**
- * write_to_console - To print an integer.
- * @num: The integer to print.
- *
- * Return: The number of characters printed.
- */
-int write_to_console(int num);
+int _putchar(char c);
+int _strlen(char *s);
+int _strlenC(const char *str);
+int p_char(va_list var);
+int p_string(va_list var);
+int p_percent(void);
+int p_int(va_list args);
+int p_dec(va_list args);
 
 #endif /* MAIN_H */

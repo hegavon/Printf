@@ -1,44 +1,49 @@
 #include "main.h"
 
 /**
- * _printf - A custom printf function that handles %c, %s, %% specifiers.
- * @format: The format string.
- *
- * Return: The number of characters printed.
+ * _printf - Clones original printf
+ * @format: The format string
+ * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
 {
-	int chars_printed = 0;
+	find f[] = {
+		{"%c", p_char},
+		{"%s", p_string},
+		{"%%", p_percent},
+		{"%d", p_dec},
+		{"%i", p_int}
+	};
+
 	va_list args;
+	int i = 0;
+	int len = 0;
 
 	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 
-	while (*format)
+	while (format[i] != '\0')
 	{
-		if (*format != '%')
+		int p = 0;
+
+		for (; p < 5; p++)
 		{
-			chars_printed += output_char(*format);
-		}
-		else
-		{
-			format++;
-			if (*format == 'c')
+			if (format[i] == f[p].data[0] && format[i + 1] == f[p].data[1])
 			{
-				chars_printed += output_char(va_arg(args, int));
-			} else if (*format == 's')
-			{
-				chars_printed += output_str(va_arg(args, char *));
-			} else if (*format == 'd' || *format == 'i')
-			{
-				chars_printed += write_to_console(va_arg(args, int));
-			} else if (*format == '%')
-			{
-				chars_printed += output_char('%');
+				len += f[p].a(args);
+				i += 2;
+				break;
 			}
 		}
-		format++;
+		if (p == 5)
+		{
+			_putchar(format[i]);
+			i++;
+			len++;
+		}
 	}
 
 	va_end(args);
-	return (chars_printed);
+	return (len);
 }
