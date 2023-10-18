@@ -31,12 +31,12 @@ int output_str(char *str);
 int string_length(const char *str);
 
 /**
- * custom_printf - A custom printf function that handles %c, %s, %% specifiers.
+ * _printf - A custom printf function that handles %c, %s, %% specifiers.
  * @format: The format string.
  *
  * Return: The number of characters printed.
  */
-int custom_printf(const char *format, ...);
+int _printf(const char *format, ...);
 
 /**
  * write_to_console - To print an integer.

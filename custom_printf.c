@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * custom_printf - A custom printf function that handles %c, %s, %% specifiers.
+ * _printf - A custom printf function that handles %c, %s, %% specifiers.
  * @format: The format string.
  *
  * Return: The number of characters printed.
  */
-int custom_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int chars_printed = 0;
 	va_list args;
