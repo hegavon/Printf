@@ -41,5 +41,4 @@ int custom_printf(const char *format, ...)
 
 	va_end(args);
 	return (chars_printed);
-
 }

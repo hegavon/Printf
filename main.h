@@ -3,8 +3,6 @@
 
 #include <unistd.h>
 #include <stdarg.h>
-#include <limits.h>
-#include <string.h>
 
 /****************** FUNCTIONS ******************/
 
@@ -30,10 +28,10 @@ int output_str(char *str);
  *
  * Return: The length of the string.
  */
-int string_length(char *str);
+int string_length(const char *str);
 
 /**
- * _printf - A custom printf function that handles %c, %s, and %% specifiers.
+ * custom_printf - A custom printf function that handles %c, %s, %% specifiers.
  * @format: The format string.
  *
  * Return: The number of characters printed.
