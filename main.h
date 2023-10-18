@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+#define BUFFER_SIZE 1024
+
 /****************** FUNCTIONS ******************/
 
 /**
