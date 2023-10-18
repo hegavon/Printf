@@ -9,28 +9,28 @@
 /****************** FUNCTIONS ******************/
 
 /**
- * print_char - Print a character.
+ * output_char - Print a character.
  * @c: The character to print.
  *
  * Return: The number of characters printed.
  */
-int print_char(char c);
+int output_char(char c);
 
 /**
- * print_str - Print a string.
+ * output_str - Print a string.
  * @str: The string to print.
  *
  * Return: The number of characters printed.
  */
-int print_str(char *str);
+int output_str(char *str);
 
 /**
- * _strlen - Calculate the length of a string.
+ * string_length - Calculate the length of a string.
  * @str: The string to measure.
  *
  * Return: The length of the string.
  */
-int _strlen(char *str);
+int string_length(char *str);
 
 /**
  * _printf - A custom printf function that handles %c, %s, and %% specifiers.
@@ -38,6 +38,14 @@ int _strlen(char *str);
  *
  * Return: The number of characters printed.
  */
-int _printf(const char *format, ...);
+int custom_printf(const char *format, ...);
+
+/**
+ * write_to_console - To print an integer.
+ * @num: The integer to print.
+ *
+ * Return: The number of characters printed.
+ */
+int write_to_console(int num);
 
 #endif /* MAIN_H */
